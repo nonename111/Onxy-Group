@@ -101,7 +101,7 @@
         border-radius: 5px;
         cursor: pointer;
         z-index: 1000;
-        transition: right 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
       }
 
       .toggle-btn i {
@@ -285,21 +285,6 @@
                 </div>
               </div>
             </div>
-            <!-- Member 5 -->
-            <div class="col-lg-4 col-md-6">
-              <div class="team-member card shadow-sm p-3 bg-white rounded text-center">
-                <img src="team-member6.jpg" alt="Member 6" class="card-img-top" />
-                <div class="card-body">
-                  <h3 class="card-title">Member</h3>
-                  <a href="Member6.html" class="btn btn-primary">Show Bio</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
     <!-- Link ke JavaScript Bootstrap untuk fungsionalitas -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- JavaScript untuk toggle sidebar -->
@@ -307,26 +292,17 @@
       function toggleSidebar() {
         const sidebar = document.querySelector(".sidebar");
         const content = document.querySelector(".content");
-        const toggleBtn = document.querySelector(".toggle-btn");
 
         sidebar.classList.toggle("hide");
         content.classList.toggle("full-width");
-
-        if (sidebar.classList.contains("hide")) {
-          toggleBtn.style.right = "15px";
-        } else {
-          toggleBtn.style.right = "265px";
-        }
       }
 
       document.addEventListener("DOMContentLoaded", function () {
         const sidebar = document.querySelector(".sidebar");
         const content = document.querySelector(".content");
-        const toggleBtn = document.querySelector(".toggle-btn");
 
         sidebar.classList.add("hide");
         content.classList.add("full-width");
-        toggleBtn.style.right = "15px";
       });
     </script>
   </body>
