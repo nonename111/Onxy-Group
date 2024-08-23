@@ -196,6 +196,21 @@
       .social-icons a:hover i {
         color: #007bff;
       }
+      .logo-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #f0f0f0; /* Warna latar belakang jika tidak ada gambar */
+  border: 4px solid #2f78ff; /* Warna border sesuai dengan tema */
+  object-fit: cover; /* Menjaga proporsi gambar */
+}
+
     </style>
   </head>
   <body>
@@ -219,17 +234,23 @@
     </div>
 
     <!-- Main Content -->
-    <div class="content">
-      <!-- About Section -->
-      <section id="about" class="py-5">
-        <div class="container">
-          <h2 class="text-center mb-4">About the Group</h2>
-          <p class="text-center">
-            Tim kolaboratif yang merancang, mengembangkan, dan mengimplementasikan
-            solusi perangkat lunak inovatif dengan fokus pada kualitas dan efisiensi.
-          </p>
-        </div>
-      </section>
+<div class="content">
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <!-- Logo Group -->
+      <div class="logo-group">
+        <img src="logo-group.png" alt="Group Logo" class="logo-img" />
+      </div>
+      <h2 class="text-center mb-4">About the Group</h2>
+      <p class="text-center">
+        Tim kolaboratif yang merancang, mengembangkan, dan mengimplementasikan
+        solusi perangkat lunak inovatif dengan fokus pada kualitas dan efisiensi.
+      </p>
+    </div>
+  </section>
+</div>
+
 
       <!-- Team Section -->
       <section id="team" class="py-5 bg-light">
