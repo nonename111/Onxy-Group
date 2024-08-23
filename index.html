@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta Charset untuk memastikan encoding karakter yang benar -->
     <meta charset="UTF-8" />
+    <!-- Meta Viewport untuk membuat situs web responsif di perangkat seluler -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Onxy Group</title>
+    <!-- Link ke favicon untuk ikon di tab browser -->
     <link rel="icon" href="Logo_Onxy_Rb.png" type="image/png">
     <!-- Link ke stylesheet Bootstrap untuk styling -->
     <link
@@ -16,13 +19,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <style>
-      /* Custom styles */
+      /* Custom styles untuk seluruh body halaman */
       body {
         display: flex;
         margin: 0;
-        overflow-x: hidden; /* Prevent horizontal scroll */
+        overflow-x: hidden; /* Mencegah scroll horizontal */
       }
 
+      /* Styling untuk sidebar */
       .sidebar {
         height: 100vh;
         background-color: #2f78ff;
@@ -34,9 +38,10 @@
         flex-direction: column;
         align-items: center;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease; /* Animasi transisi untuk sidebar */
       }
 
+      /* Styling untuk gambar profil di sidebar */
       .profile-img {
         width: 120px;
         height: 120px;
@@ -45,15 +50,17 @@
         margin-bottom: 15px;
         background-size: cover;
         background-position: center;
-        border: 4px solid #fff;
+        border: 4px solid #fff; /* Memberikan border putih pada gambar profil */
       }
 
+      /* Styling untuk judul di sidebar */
       .sidebar h3 {
         margin-bottom: 5px;
         font-size: 24px;
         font-weight: bold;
       }
 
+      /* Styling untuk tagline di sidebar */
       .tagline {
         font-style: italic;
         font-size: 14px;
@@ -61,6 +68,7 @@
         text-align: center;
       }
 
+      /* Styling untuk link navigasi di sidebar */
       .sidebar a {
         color: white;
         text-decoration: none;
@@ -68,86 +76,101 @@
         padding: 12px 20px;
         margin: 8px 0;
         border-radius: 30px;
-        transition: background-color 0.3s, transform 0.3s;
+        transition: background-color 0.3s, transform 0.3s; /* Animasi transisi untuk hover */
         text-align: left;
         width: 100%;
         font-size: 16px;
         font-weight: 500;
       }
 
+      /* Hover effect untuk link navigasi di sidebar */
       .sidebar a:hover {
         background-color: #4a89ff;
-        transform: translateY(-3px);
+        transform: translateY(-3px); /* Sedikit mengangkat elemen saat di-hover */
       }
 
+      /* Styling untuk ikon dalam link navigasi di sidebar */
       .sidebar a i {
         margin-right: 5px;
       }
 
+      /* Styling untuk area konten utama */
       .content {
         margin-left: 250px;
         padding: 20px;
-        flex-grow: 1;
-        transition: margin-left 0.3s ease;
+        flex-grow: 1; /* Membuat konten utama menempati sisa ruang */
+        transition: margin-left 0.3s ease; /* Animasi transisi untuk margin-left */
       }
 
+      /* Styling untuk tombol toggle sidebar */
       .toggle-btn {
         position: fixed;
         top: 15px;
-        right: 15px; /* Position the toggle button on the right side */
+        right: 15px; /* Menempatkan tombol di sisi kanan */
         background-color: white;
         color: #2f78ff;
         border: none;
         padding: 10px;
         border-radius: 5px;
         cursor: pointer;
-        z-index: 1000;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+        z-index: 1000; /* Memastikan tombol tetap di atas elemen lain */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opsional: Menambah bayangan untuk visibilitas lebih baik */
       }
 
+      /* Styling untuk ikon dalam tombol toggle sidebar */
       .toggle-btn i {
         font-size: 20px;
       }
 
+      /* Class untuk menyembunyikan sidebar */
       .sidebar.hide {
         transform: translateX(-250px);
       }
 
+      /* Class untuk mengatur konten utama menjadi full-width */
       .content.full-width {
         margin-left: 0;
       }
 
+      /* Styling untuk bagian tim */
       #team {
         margin-left: 15px;
       }
 
+      /* Styling untuk container */
       .container {
         padding-left: 15px;
         padding-right: 15px;
       }
 
+      /* Styling untuk anggota tim */
       .team-member {
         border: 1px solid #ddd;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
+      /* Styling untuk gambar dalam card */
       .card-img-top {
         max-width: 100%;
         height: auto;
       }
 
+      /* Padding untuk bagian dalam card */
       .card-body {
         padding: 15px;
       }
 
+      /* Margin bawah untuk judul dalam card */
       .card-title {
         margin-bottom: 15px;
       }
 
+      /* Margin atas untuk tombol dalam card */
       .btn-primary {
         margin-top: 10px;
       }
 
+      /* Styling untuk bagian hero */
       .hero {
         background: url("hero-background.jpg") no-repeat center center/cover;
         height: 100vh;
@@ -158,6 +181,7 @@
         text-align: center;
       }
 
+      /* Pengaturan layout untuk konten tim */
       .team-content {
         display: flex;
         flex-wrap: wrap;
@@ -165,11 +189,13 @@
         justify-content: center;
       }
 
+      /* Styling individual untuk anggota tim */
       .team-member {
         max-width: 300px;
         text-align: center;
       }
 
+      /* Styling untuk gambar anggota tim */
       .team-member img {
         width: 100%;
         height: 200px;
@@ -178,10 +204,12 @@
         transition: transform 0.3s;
       }
 
+      /* Hover effect untuk gambar anggota tim */
       .team-member img:hover {
         transform: scale(1.05);
       }
 
+      /* Styling untuk ikon media sosial */
       .social-icons a {
         text-decoration: none;
         color: #007bff;
@@ -189,10 +217,12 @@
         font-size: 24px;
       }
 
+      /* Transition untuk ikon media sosial */
       .social-icons i {
         transition: color 0.3s;
       }
 
+      /* Hover effect untuk ikon media sosial */
       .social-icons a:hover i {
         color: #007bff;
       }
@@ -200,7 +230,7 @@
     </style>
   </head>
   <body>
-    <!-- Tombol Toggle -->
+    <!-- Tombol Toggle untuk menyembunyikan/menampilkan sidebar -->
     <button class="toggle-btn" onclick="toggleSidebar()">
       <i class="fas fa-bars"></i>
     </button>
