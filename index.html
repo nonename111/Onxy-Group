@@ -101,7 +101,7 @@
         border-radius: 5px;
         cursor: pointer;
         z-index: 1000;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for better visibility */
+        transition: right 0.3s ease;
       }
 
       .toggle-btn i {
@@ -307,17 +307,26 @@
       function toggleSidebar() {
         const sidebar = document.querySelector(".sidebar");
         const content = document.querySelector(".content");
+        const toggleBtn = document.querySelector(".toggle-btn");
 
         sidebar.classList.toggle("hide");
         content.classList.toggle("full-width");
+
+        if (sidebar.classList.contains("hide")) {
+          toggleBtn.style.right = "15px";
+        } else {
+          toggleBtn.style.right = "265px";
+        }
       }
 
       document.addEventListener("DOMContentLoaded", function () {
         const sidebar = document.querySelector(".sidebar");
         const content = document.querySelector(".content");
+        const toggleBtn = document.querySelector(".toggle-btn");
 
         sidebar.classList.add("hide");
         content.classList.add("full-width");
+        toggleBtn.style.right = "15px";
       });
     </script>
   </body>
