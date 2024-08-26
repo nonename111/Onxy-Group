@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Biodata View</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #0077ff, #ffffff); /* Gradien biru laut ke putih secara vertikal */
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .member-profile img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid #ffffff; /* Border putih di sekitar gambar */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out; /* Efek hover */
+        }
+
+        .member-profile img:hover {
+            transform: scale(1.05); /* Perbesar gambar saat hover */
+        }
+
+        .member-profile h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #343a40; /* Warna teks judul */
+        }
+
+        .member-profile p {
+            font-size: 1.1rem;
+            color: #6c757d; /* Warna teks deskripsi */
+        }
+
+        .member-info,
+        .member-education {
+            background-color: #ffffff; /* Latar belakang putih untuk konten */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            border-bottom: 2px solid #0077ff; /* Garis bawah berwarna biru */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #0077ff; /* Warna teks judul */
+        }
+
+        .btn-back {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1000; /* Pastikan tombol berada di atas konten lainnya */
+        }
+
+        .social-links a {
+            color: #0077ff;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .social-links a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Profile</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"> Dashboard </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="member-profile text-center">
+                    <img src="../image/vanno_2.jpg" alt="Member Profile Picture">
+                    <h2 class="mt-3">Devanno Andhika Putra</h2>
+                    <p class="text-muted">Frontend Developer</p>
+                    <div class="social-links mt-3">
+                        <a href="[LinkedIn URL]" target="_blank">
+                            <i class="bi bi-linkedin" style="font-size: 24px;"></i>
+                        </a>
+                        <a href="https://github.com/devannoap31" target="_blank">
+                            <i class="bi bi-github" style="font-size: 24px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="member-info mb-4">
+                    <h3 class="section-title">About Devanno Andhika Putra</h3>
+                    <p>Devanno adalah seorang Frontend Developer sebagai Mahasiswa Politeknik Indonusa Surakarta. Berkeinginan menjadi Full Stack Developer. </p>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <i class="bi bi-calendar"></i> Age
+                                </th>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="bi bi-geo-alt"></i> Location
+                                </th>
+                                <td>Surakarta</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="bi bi-envelope"></i> Email
+                                </th>
+                                <td>
+                                    <a href="mailto:devannoap318@gmail.com">devannoap318@gmail.com</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="bi bi-whatsapp"></i> WhatsApp
+                                </th>
+                                <td>
+                                    <a href="https://wa.me/6285697452659?text=Halo%20Saya%20ingin%20menyapa" target="_blank">
+                                         Chat Personal
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="member-education mb-4">
+                    <h3 class="section-title">Education</h3>
+                    <ul>
+                        <li><i class="bi bi-building"></i> SMK Negeri 2 Surakarta</li>
+                        <li><i class="bi bi-building"></i> Politeknik Indonusa Surakarta</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
