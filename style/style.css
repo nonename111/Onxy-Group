@@ -1,281 +1,283 @@
 /* Custom styles untuk seluruh body halaman */
 body {
-    font-family:'Roboto';
-    display: flex;
-    margin: 0;
-    overflow-x: hidden; /* Mencegah scroll horizontal */
-    color: #007bff;
+  font-family: 'Roboto';
+  display: flex;
+  margin: 0;
+  overflow-x: hidden; /* Mencegah scroll horizontal */
+  color: #007bff;
+}
+
+/* Styling untuk sidebar */
+.sidebar {
+  height: 100vh;
+  background-image: url('images/Side-bar.jpg'); /* Menentukan gambar latar belakang */
+  background-size: cover; /* Agar gambar menutupi seluruh area */
+  background-position: center; /* Menjaga gambar berada di tengah */
+  color: rgb(77, 77, 77);
+  padding: 20px;
+  width: 250px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease; /* Animasi transisi untuk sidebar */
+}
+
+/* Class untuk menyembunyikan sidebar */
+.sidebar.hide {
+  transform: translateX(-250px);
+}
+
+/* Styling untuk gambar profil di sidebar */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin-bottom: 15px;
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #fff; /* Memberikan border putih pada gambar profil */
+}
+
+/* Styling untuk judul di sidebar */
+.sidebar h3 {
+  margin-bottom: 5px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Styling untuk tagline di sidebar */
+.tagline {
+  font-style: 'Sans-Sherif';
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Styling untuk link navigasi di sidebar */
+.sidebar a {
+  color: rgb(46, 46, 46);
+  text-decoration: none;
+  display: block;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 30px;
+  transition: background-color 0.3s, transform 0.3s; /* Animasi transisi untuk hover */
+  text-align: left;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Hover effect untuk link navigasi di sidebar */
+.sidebar a:hover {
+  background-color: #4a89ff;
+  transform: translateY(-3px); /* Sedikit mengangkat elemen saat di-hover */
+}
+
+/* Styling untuk ikon dalam link navigasi di sidebar */
+.sidebar a i {
+  margin-right: 5px;
+}
+
+/* Styling untuk area konten utama */
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  flex-grow: 1; /* Membuat konten utama menempati sisa ruang */
+  transition: margin-left 0.3s ease; /* Animasi transisi untuk margin-left */
+}
+
+/* Class untuk mengatur konten utama menjadi full-width */
+.content.full-width {
+  margin-left: 0;
+}
+
+/* Styling untuk tombol toggle sidebar */
+.toggle-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px; /* Menempatkan tombol di sisi kanan */
+  background-color: white;
+  color: #2f78ff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000; /* Memastikan tombol tetap di atas elemen lain */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opsional: Menambah bayangan untuk visibilitas lebih baik */
+}
+
+/* Styling untuk ikon dalam tombol toggle sidebar */
+.toggle-btn i {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Styling untuk bagian tim */
+#team {
+  margin-left: 15px;
+  background-image: url('images/Tampilan\ Card.jpg'); /* Ganti 'team-background.jpg' dengan path gambar Anda */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 80px 0;
+  color: #007bff;
+}
+
+/* Styling untuk container */
+.container {
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Styling untuk anggota tim */
+.team-member {
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* Mulai dengan transparansi */
+  transform: translateY(20px); /* Mulai dari bawah */
+  animation: fadeInUp 0.6s forwards; /* Terapkan animasi */
+}
+
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
+}
 
-  /* Styling untuk sidebar */
-  .sidebar {
-    height: 100vh;
-    background-image: url('images/Side-bar.jpg'); /* Menentukan gambar latar belakang */
-    background-size: cover; /* Agar gambar menutupi seluruh area */
-    background-position: center; /* Menjaga gambar berada di tengah */
-    color: rgb(77, 77, 77);
-    padding: 20px;
-    width: 250px;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease; /* Animasi transisi untuk sidebar */
+.col-lg-4:nth-child(1) .team-member {
+  animation-delay: 0.2s; /* Delay pertama */
+}
+
+.col-lg-4:nth-child(2) .team-member {
+  animation-delay: 0.4s; /* Delay kedua */
+}
+
+.col-lg-4:nth-child(3) .team-member {
+  animation-delay: 0.6s; /* Delay ketiga */
+}
+
+.col-lg-4:nth-child(4) .team-member {
+  animation-delay: 0.8s; /* Delay pertama */
+}
+
+.col-lg-4:nth-child(5) .team-member {
+  animation-delay: 1s; /* Delay kedua */
+}
+
+/* Styling untuk gambar dalam card */
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Padding untuk bagian dalam card */
+.card-body {
+  padding: 15px;
+}
+
+/* Margin bawah untuk judul dalam card */
+.card-title {
+  margin-bottom: 15px;
+}
+
+/* Margin atas untuk tombol dalam card */
+.btn-primary {
+  margin-top: 10px;
+}
+
+/* Styling untuk bagian hero */
+.hero {
+  background: url("hero-background.jpg") no-repeat center center/cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Pengaturan layout untuk konten tim */
+.team-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Styling individual untuk anggota tim */
+.team-member {
+  max-width: 300px;
+  text-align: center;
+}
+
+/* Styling untuk gambar anggota tim */
+.team-member img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+/* Hover effect untuk gambar anggota tim */
+.team-member img:hover {
+  transform: scale(1.05);
+}
+
+/* Styling untuk ikon media sosial */
+.social-icons a {
+  text-decoration: none;
+  color: #007bff;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+/* Transition untuk ikon media sosial */
+.social-icons i {
+  transition: color 0.3s;
+}
+
+/* Hover effect untuk ikon media sosial */
+.social-icons a:hover i {
+  color: #007bff;
+}
+
+#contact h2::before {
+  content: "";
+  display: block;
+  width: 0; /* Lebar awal garis */
+  height: 4px; /* Ketebalan garis */
+  background-color: #007bff; /* Warna garis */
+  position: relative;
+  top: -10px; /* Posisi garis di atas teks */
+  left: 0; /* Posisi awal dari kiri */
+  animation: slideIn 2s ease-in-out forwards; /* Animasi garis */
+}
+
+@keyframes slideIn {
+  from {
+      width: 0; /* Mulai dengan lebar nol */
   }
-
-  /* Styling untuk gambar profil di sidebar */
-  .profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    margin-bottom: 15px;
-    background-size: cover;
-    background-position: center;
-    border: 4px solid #fff; /* Memberikan border putih pada gambar profil */
+  to {
+      width: 100%; /* Lebar akhir garis sesuai lebar elemen h2 */
   }
+}
 
-  /* Styling untuk judul di sidebar */
-  .sidebar h3 {
-    margin-bottom: 5px;
-    font-size: 24px;
-    font-weight: bold;
-  }
-
-  /* Styling untuk tagline di sidebar */
-  .tagline {
-    font-style: 'Sans-Sherif';
-    font-size: 14px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  /* Styling untuk link navigasi di sidebar */
-  .sidebar a {
-    color: rgb(70, 70, 70);
-    text-decoration: none;
-    display: block;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border-radius: 30px;
-    transition: background-color 0.3s, transform 0.3s; /* Animasi transisi untuk hover */
-    text-align: left;
-    width: 100%;
-    font-size: 16px;
-    font-weight: 500;
-  }
-
-  /* Hover effect untuk link navigasi di sidebar */
-  .sidebar a:hover {
-    background-color: #4a89ff;
-    transform: translateY(-3px); /* Sedikit mengangkat elemen saat di-hover */
-  }
-
-  /* Styling untuk ikon dalam link navigasi di sidebar */
-  .sidebar a i {
-    margin-right: 5px;
-  }
-
-  /* Styling untuk area konten utama */
-  .content {
-    margin-left: 250px;
-    padding: 20px;
-    flex-grow: 1; /* Membuat konten utama menempati sisa ruang */
-    transition: margin-left 0.3s ease; /* Animasi transisi untuk margin-left */
-  }
-
-  /* Styling untuk tombol toggle sidebar */
-  .toggle-btn {
-    position: fixed;
-    top: 15px;
-    right: 15px; /* Menempatkan tombol di sisi kanan */
-    background-color: white;
-    color: #2f78ff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1000; /* Memastikan tombol tetap di atas elemen lain */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opsional: Menambah bayangan untuk visibilitas lebih baik */
-  }
-
-  /* Styling untuk ikon dalam tombol toggle sidebar */
-  .toggle-btn i {
-    font-size: 20px;
-  }
-
-  /* Class untuk menyembunyikan sidebar */
-  .sidebar.hide {
-    transform: translateX(-250px);
-  }
-
-  /* Class untuk mengatur konten utama menjadi full-width */
-  .content.full-width {
-    margin-left: 0;
-  }
-
-  /* Styling untuk bagian tim */
-  #team {
-    margin-left: 15px;
-    background-image: url('images/Tampilan\ Card.jpg'); /* Ganti 'team-background.jpg' dengan path gambar Anda */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    padding: 80px 0;
-    color: #007bff;
-  }
-
-  /* Styling untuk container */
-  .container {
-    border-radius: 20px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  /* Styling untuk anggota tim */
-  .team-member {
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    opacity: 0; /* Mulai dengan transparansi */
-    transform: translateY(20px); /* Mulai dari bawah */
-    animation: fadeInUp 0.6s forwards; /* Terapkan animasi */
-  }
-  @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .col-lg-4:nth-child(1) .team-member {
-        animation-delay: 0.2s; /* Delay pertama */
-      }
-
-      .col-lg-4:nth-child(2) .team-member {
-        animation-delay: 0.4s; /* Delay kedua */
-      }
-
-      .col-lg-4:nth-child(3) .team-member {
-        animation-delay: 0.6s; /* Delay ketiga */
-      }
-      .col-lg-4:nth-child(4) .team-member {
-        animation-delay: 0.8s; /* Delay pertama */
-      }
-
-      .col-lg-4:nth-child(5) .team-member {
-        animation-delay: 1s; /* Delay kedua */
-      }
-
-  /* Styling untuk gambar dalam card */
-  .card-img-top {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* Padding untuk bagian dalam card */
-  .card-body {
-    padding: 15px;
-  }
-
-  /* Margin bawah untuk judul dalam card */
-  .card-title {
-    margin-bottom: 15px;
-  }
-
-  /* Margin atas untuk tombol dalam card */
-  .btn-primary {
-    margin-top: 10px;
-  }
-
-  /* Styling untuk bagian hero */
-  .hero {
-    background: url("hero-background.jpg") no-repeat center center/cover;
-    height: 100vh;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  /* Pengaturan layout untuk konten tim */
-  .team-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-  }
-
-  /* Styling individual untuk anggota tim */
-  .team-member {
-    max-width: 300px;
-    text-align: center;
-  }
-
-  /* Styling untuk gambar anggota tim */
-  .team-member img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s;
-  }
-
-  /* Hover effect untuk gambar anggota tim */
-  .team-member img:hover {
-    transform: scale(1.05);
-  }
-
-  /* Styling untuk ikon media sosial */
-  .social-icons a {
-    text-decoration: none;
-    color: #007bff;
-    margin: 0 10px;
-    font-size: 24px;
-  }
-
-  /* Transition untuk ikon media sosial */
-  .social-icons i {
-    transition: color 0.3s;
-  }
-
-  /* Hover effect untuk ikon media sosial */
-  .social-icons a:hover i {
-    color: #007bff;
-  }
-
-  #contact h2::before {
-      content: "";
-      display: block;
-      width: 0; /* Lebar awal garis */
-      height: 4px; /* Ketebalan garis */
-      background-color: #007bff; /* Warna garis */
-      position: relative;
-      top: -10px; /* Posisi garis di atas teks */
-      left: 0; /* Posisi awal dari kiri */
-      animation: slideIn 2s ease-in-out forwards; /* Animasi garis */
-  }
-
-      @keyframes slideIn {
-          from {
-              width: 0; /* Mulai dengan lebar nol */
-          }
-          to {
-              width: 100%; /* Lebar akhir garis sesuai lebar elemen h2 */
-          }
-      }
-
-      footer {
-        border-radius: 10px; /* Melengkungkan sudut footer */
-        padding: 20px;
-        position: relative;
-        overflow: hidden; /* Menyembunyikan bagian yang melampaui sudut melengkung */
-        background-color: #007bff; /* Contoh warna background footer */
-        color: #007bff; /* Contoh warna teks footer */
-    }
+footer {
+  border-radius: 10px; /* Melengkungkan sudut footer */
+  padding: 20px;
+  position: relative;
+  overflow: hidden; /* Menyembunyikan bagian yang melampaui sudut melengkung */
+  background-color: #007bff; /* Contoh warna background footer */
+  color: #007bff; /* Contoh warna teks footer */
+}
