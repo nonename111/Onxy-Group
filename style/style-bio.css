@@ -1,5 +1,13 @@
 body {
-    background: linear-gradient(to bottom, #0077ff, #ffffff); /* Gradien biru laut ke putih secara vertikal */
+    background-image: url('images/Background.png'); /* Menentukan gambar latar belakang */
+    background-size: cover;/* Membuat gambar menutupi seluruh area body */
+    background-position: center; /* Menempatkan gambar di tengah body */
+    background-repeat: no-repeat; /* Mencegah pengulangan gambar */
+    background-attachment: fixed; /* Membuat gambar tetap pada posisinya saat di-scroll */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Contoh font */
+}
 }
 
 .navbar {
